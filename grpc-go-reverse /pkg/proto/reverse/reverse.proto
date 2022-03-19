@@ -1,0 +1,17 @@
+syntax = "proto3"; 
+ 
+//option go_package="./;reverse";
+option go_package="github.com/anitanadvikova/soa-mafia/grpc-go-reverse/pkg/proto/reverse;reverse";
+package reverse; 
+ 
+service Reverse { 
+    rpc Do(Request) returns (Response) {} 
+} 
+ 
+message Request { 
+    string message =1; 
+} 
+ 
+message Response { 
+    string message =1; 
+} 
