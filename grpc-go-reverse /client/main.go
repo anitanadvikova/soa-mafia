@@ -26,7 +26,7 @@ func main() {
     ctx, cancel := context.WithTimeout(context.Background(), time.Second) 
     defer cancel() 
  
-    response, err := client.DoReverse(ctx, request) 
+    response, err := client.Do(ctx, request) 
     if err != nil { 
         log.Fatalln(err) 
     } 
