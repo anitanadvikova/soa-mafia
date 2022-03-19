@@ -1,4 +1,5 @@
-module grpc-go-reverse
+//module grpc-go-reverse
+module github.com/anitanadvikova/soa-mafia/grpc-go-reverse
 
 go 1.18
 
