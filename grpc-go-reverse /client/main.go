@@ -13,8 +13,7 @@ import (
 func main() { 
     log.Println("Client running ...") 
  
-    conn, err := grpc.Dial(":9000", grpc.WithInsecure(), grpc.WithBlock(
-)) 
+    conn, err := grpc.Dial(":9000", grpc.WithInsecure(), grpc.WithBlock()) 
     if err != nil { 
         log.Fatalln(err) 
     } 
@@ -24,8 +23,7 @@ func main() {
  
     request := &reverse.Request{Message: "This is a test"} 
  
-    ctx, cancel := context.WithTimeout(context.Background(), time.Second
-) 
+    ctx, cancel := context.WithTimeout(context.Background(), time.Second) 
     defer cancel() 
  
     response, err := client.DoReverse(ctx, request) 
