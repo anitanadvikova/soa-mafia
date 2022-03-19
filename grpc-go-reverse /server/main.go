@@ -15,8 +15,7 @@ type server struct {
     reverse.UnimplementedReverseServer 
 } 
  
-func (s *server) DoReverse(ctx context.Context, request *reverse.Request
-) (*reverse.Response, error) { 
+func (s *server) DoReverse(ctx context.Context, request *reverse.Request) (*reverse.Response, error) { 
     log.Println(fmt.Sprintf("Request: %s", request.GetMessage())) 
     return &reverse.Response{Message: fmt.Sprintf("Reversed string %s", 
 stringReverse(request.GetMessage()))}, nil 
